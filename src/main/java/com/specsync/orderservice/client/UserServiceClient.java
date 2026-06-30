@@ -17,7 +17,7 @@ public class UserServiceClient {
 
     private final WebClient userServiceClient;
 
-    public UserServiceClient(@Qualifier("userServiceClient") WebClient userServiceClient) {
+    public UserServiceClient(@Qualifier("userWebClient") WebClient userServiceClient) {
         this.userServiceClient = userServiceClient;
     }
 

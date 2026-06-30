@@ -17,7 +17,7 @@ public class ProductServiceClient {
 
     private final WebClient productServiceClient;
 
-    public ProductServiceClient(@Qualifier("productServiceClient") WebClient productServiceClient) {
+    public ProductServiceClient(@Qualifier("productWebClient") WebClient productServiceClient) {
         this.productServiceClient = productServiceClient;
     }
 

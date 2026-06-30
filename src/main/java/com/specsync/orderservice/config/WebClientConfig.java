@@ -14,23 +14,18 @@ public class WebClientConfig {
     @Value("${services.product-service.url}")
     private String productServiceUrl;
 
-    @Bean
-    public WebClient.Builder webClientBuilder() {
-        return WebClient.builder();
-    }
-
-    @Bean("userServiceClient")
-    public WebClient userServiceClient(WebClient.Builder builder) {
-        return builder
+    @Bean("userWebClient")
+    public WebClient userWebClient() {
+        return WebClient.builder()
                 .baseUrl(userServiceUrl)
                 .defaultHeader("Content-Type", "application/json")
                 .defaultHeader("Accept", "application/json")
                 .build();
     }
 
-    @Bean("productServiceClient")
-    public WebClient productServiceClient(WebClient.Builder builder) {
-        return builder
+    @Bean("productWebClient")
+    public WebClient productWebClient() {
+        return WebClient.builder()
                 .baseUrl(productServiceUrl)
                 .defaultHeader("Content-Type", "application/json")
                 .defaultHeader("Accept", "application/json")
